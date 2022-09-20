@@ -1,0 +1,611 @@
+---
+title: "Git & GitHub Workshop"
+author: Kazuharu Yanagimoto
+date: '`r format(Sys.time(), "%B %d, %Y")`'
+execute:
+    echo: false
+    warning: false
+    message: false
+format:
+  revealjs:
+    self-contained: true
+    width: 1600
+    height: 900
+---
+
+
+## Why Do People Use Git?
+
+<br>
+
+#### 📝 **Recording**
+
+take logs of all coding activity of you and your collaborators
+
+#### 🕒 **Restorable**
+
+go back to a previous version of codes
+
+#### 🔍 **Comparable**
+
+focus on the change in the codes, and detect bugs
+
+#### 🔀 **Branch**
+
+separate things completed and under development
+
+
+
+## Is Git Easy?
+
+<br>
+
+### No. I am sorry.
+- Git has many commands with many options
+- Need some knowledge to recover from a trouble
+- Git allows various styles to use, which are different across people and organization
+
+### I propose
+- First follow my workflow, which requires the minimum knowledge
+- Once you're comfortable with it, learn the detail
+
+
+## Is GitHub Git?
+
+<br>
+
+:::: {.columns}
+::: {.column width="60%"}
+
+### Git Is a Version Control Tool
+- App
+- Command Line
+- Works Locally
+
+### GitHub Is a Web-Service
+- Publish Codes
+- Collaboration
+:::
+
+::: {.column width="40%"}
+![](./public/img/Octocat.png)
+:::
+::::
+
+## CUI vs GUI?
+
+<br>
+
+#### GUI Applications for Git & GitHub
+
+- [GitHub Desktop](https://desktop.github.com/)
+- [VSCode](https://code.visualstudio.com/)
+- [Fork](https://git-fork.com/)
+- ([RStudio](https://www.rstudio.com/))
+
+#### I recommend
+
+- First learn CUI
+- CUI knowledge is necessary to use GUI
+- DVC (explained later) only works with command line
+
+
+# Basics of Git
+
+## Commit Is a Save Point!
+
+<br>
+
+- "The purpose of Git" is to create a **COMMIT**
+- A commit is a save point of a state of the project folder
+
+<br>
+
+![](./public/drawio/git_history.svg)
+
+
+
+## You Can _Go Back_ to Any Commit
+
+<br>
+
+![](./public/drawio/git_back.svg)
+
+
+
+
+## You Can _Compare_ Any Two Commits
+
+<br>
+
+![](./public/drawio/git_compare.svg)
+
+## What Is _Commit_ in a Computer?
+
+![](./public/drawio/git_commit.svg)
+
+<br>
+
+- If you init a git project on a folder, a _hidden_ folder `.git` will be made
+- When you create a commit, the state of the folder will be stored in `.git` folder
+- The name of commit is just a random hash string
+
+
+## Local & Remote Repository
+
+![](./public/drawio/git_repository.svg)
+
+- `.git` folder in your local machine (like in the previous page) is called **local repository**
+- Usually, a **remote repository** (like GitHub) is used for code sharing
+- **Push** and **Pull** is a command to sync your local repository with the remote  repository
+
+
+# CUI and GUI Operations
+
+## Stage
+
+- When you modify some files, you can create a commit only for specific changes
+- This choosing process is called, **Staging**
+
+#### Command Line
+
+<br>
+
+```shell
+git add foo1.txt
+```
+
+<br>
+
+#### VS Code
+
+## Commit
+
+- You have to add a message for each commit
+
+#### Command Line
+
+<br>
+
+```shell
+git commit -m "YOUR COMMENT"
+```
+
+<br>
+
+#### VS Code
+
+
+
+## Push and Pull
+
+For now, forget about `origin main`
+
+:::: {.columns}
+::: {.column}
+
+### Push
+
+#### Command Line
+
+```shell
+git push origin main
+```
+
+<br>
+
+#### VS Code
+
+:::
+
+::: {.column}
+### Pull
+
+#### Command Line
+
+```shell
+git push origin main
+```
+
+<br>
+
+#### VS Code
+
+:::
+::::
+
+
+
+## Handson 1: First Commit and Push
+
+#### 1. Go to [GitHub webpage](https://github.com/) and create a repository
+- Choose the private repository (if it is for research)
+- Choose the language you are using for .gitignore
+- Add README
+- No need to choose license (because it is private)
+
+#### 2. Clone it to your local machine
+- The easist way is to open a new window of VS Code and choose "clone a repository"
+- You can also do `git clone URL_OF_REPOSITORY`
+
+#### 3. Create a Commit and Push it
+- Create a text file (say foo1.txt) with a random text (say "Hello Git!")
+- Create a commit (don't forget to stage it before)
+- Push to the remote repository
+
+# Branch, Merge, and Conflict
+
+## HEAD and Branch
+
+- **Branch**: a label of a commit
+- **HEAD**: the branch you are seeing
+
+<br>
+
+![](./public/drawio/git_branch.svg)
+
+<br>
+
+- To create a branch, `git branch BRANCH_NAME`
+- To move the HEAD, `git switch BRANCH_NAME`
+- In VS Code, press the button at bottom-left
+
+## Merge
+
+<br>
+
+![](./public/drawio/git_merge.svg)
+
+<br>
+
+- You can merge a branche into HEAD by `git merge BRANCH_NAME`
+
+## Two Types of Merge
+
+<br>
+
+:::: {.columns}
+::: {.column}
+#### Merge at Local Repository
+
+- Merge it to main on your local repository
+- Push the local main into the remote main
+- You can use it for solo project
+
+:::
+
+::: {.column}
+#### Merge at Remote Repository
+
+- Create a **Pull Request** on GitHub Repository
+- Decide to merge it into main or not on GitHub
+- Used for collaboration (but I use it even for solo project)
+
+:::
+::::
+
+
+## Questions about Branches
+
+<br>
+
+#### *Why Do We Use Branch?*
+- Keep **main** branch clean and work correctly
+- Easy to detect a bug (because "main" works perfectly)
+- Collaborators create a branch from main and work on it
+
+<br>
+
+#### *When Should I Create a Branch?*
+A simple suggestion is _main-dev workflow_
+
+- You only work on **dev** branch (with a collaborator, I use my name for the developing branch)
+- When you finish a meaningful chunk of works, cleanup uneccessary files and merge **dev** into **main**
+
+I usually merge _dev_ into _main_ just before the meeting with my supervisor or collaborators.
+
+
+## Conflict
+
+- **Conflict**: A different code is written in the same line of two branches in merging
+- It returns a code including the part conflicted
+
+```shell
+<<<<<<< HEAD
+Code on the HEAD branch
+======
+Code on the branch you want to merge
+>>>>>>> dev
+```
+- To solve the conflict, just delete the lines you don't need, save the file, and create a commit for this merge.
+- In VS Code, you can solve the conflict by clicking buttons
+- Most conflicts can be avoided by a rule prohibitting members from co-editting the same file
+
+
+## Pull = Fetch + Merge
+
+- Although I explained **pull** as downloding from a remote repository, it is actually the combination of **fetch** and **merge** of a repository
+- **Fetch** : download a branch from the remote repository (origin) to a local machine, named `origin/BRANCH_NAME`
+- `git pull origin main` is equivalent to `git fetch origin main && git merge origin/main`
+- Because it is a merge, `git pull` could return a CONFLICT!
+
+
+
+
+## Handson 2: Two Types of Merge
+
+
+#### 1. Local Merge
+1. Create a new branch "dev" and switch the HEAD into it
+1. Create some commits
+1. Switch HEAD into main
+1. Merge dev into main
+1. Push it to origin/main
+1. Delete (local) dev branch
+
+#### 2. Remote Merge
+1. Create dev branch and switch into it
+1. Create some commits
+1. Push it to origin/dev
+1. Go to GitHub and create a Pull Request
+1. Merge it into main and delete the remote dev branch
+1. Go back to local and switch into main
+1. Pull main branch and delete (local) dev branch
+
+
+## Handson 3: Three Types of Conflicts
+
+### 1. Local Conflict
+
+1. Switch to dev and create `foo1.txt` with a line of text (e.g. "Tortilla sin Cebolla") and create a commit
+1. Switch to main and create `foo1.txt` with a different line of text (e.g. "Tortilla con Cebolla") and a create a commit
+1. Merge dev into main, which produces a conflict
+1. Solve the conflict by choosing either of the lines
+
+### 2. Pull Request Conflict
+
+1. Head on main and create `foo2txt` with a line of text (e.g. "Oh! How beautiful are our Emperor's new clothes! "). Push it into origin/main
+1. Switch to dev and create `foo2.txt` with a different line of text (e.g. "But the Emperor has nothing at all on!"). Push it into origin/dev
+1. Go to GitHub and create a pull request. Solve the conflict on GitHub
+
+## {}
+### 3. Pull Conflict
+
+1. Switch to dev and create `foo3.txt` with a line of text (e.g. "Mountain of Mushroom"), create a commit, and push into origin/dev
+1. Go to GitHub and merge dev into main
+1. Go back to local. Switch to main and create `foo3.txt` with a different line of text (e.g. "Mountain of Bumboo"), create a commit
+1. Pull from origin/main, which produces a conflict. Solve it.
+
+<br>
+
+:::: {.columns}
+::: {.column}
+![](https://www.meiji.co.jp/sweets/chocolate/kinotake/products/kinokonoyama/assets/img/thumb.jpg)
+:::
+::: {.column}
+![](https://www.meiji.co.jp/sweets/chocolate/kinotake/products/takenokonosato/assets/img/thumb.jpg)
+:::
+::::
+
+
+# Git & GitHub Workflow
+
+
+## 1. Sync Local Repository
+
+<br>
+
+![](./public/drawio/wf_pull.svg)
+
+<br>
+
+```shell
+git switch main
+git pull origin main
+```
+
+## 2. Write Your Codes on Dev branch
+
+<br>
+
+![](./public/drawio/wf_branch.svg)
+
+<br>
+
+#### 1. Switch to a new developing branch
+
+```shell
+git branch dev
+git switch dev
+```
+
+Or
+
+```shell
+git checkout -b "dev"
+```
+
+<br>
+
+#### 2. Write your codes
+
+
+
+
+
+## 3. Commit
+
+<br>
+
+![](./public/drawio/wf_commit.svg)
+
+<br>
+
+#### 1. Stage files you want to commit
+
+```shell
+git add foo1.txt foo2.txt
+```
+
+If you want to stage all modified files, `git add .`
+
+<br>
+
+#### 2. Commit
+
+```shell
+git commit -m "hogehoge"
+```
+
+
+## 4. Push to the Remote Repository
+
+<br>
+
+![](./public/drawio/wf_push.svg)
+
+<br>
+
+```shell
+git push origin dev
+```
+
+
+## 5. Pull Request and Merge
+
+<br>
+<br>
+<br>
+
+![](./public/drawio/wf_pr.svg)
+
+
+<br>
+
+I recommend you to delete the remote and local dev branch here.
+
+
+## Handson 4: Follow My Workflow
+
+<br>
+
+- Follow my workflow 1-5 with a few commits
+- Try both command line and VS Code
+
+
+# GitHub with Data
+
+
+
+## Data Version Control (DVC)
+
+<br>
+
+#### *How Can We Work with Data in Git?*
+- We want to store the data in the Git project (because referred in the code)
+- Not interested in change in each line of the data (imagine data cleaning)
+- There is a limit for the file size in GitHub (100 MB)
+
+<br>
+
+
+#### *How Does DVC Work?*
+- Create a text file for the meta-information of the data
+- Git manages only the text file
+- Git can follow when the data is added, modified, deleted through the text file
+- The original data is stored in the remote storage (Google Drive, Amazon S3, ..)
+
+
+
+## How Does DVC Work?
+
+![](./public/drawio/dvc.svg)
+
+
+
+## {}
+
+### Setup Commands
+
+#### 1. Init a DVC project
+
+```shell
+dvc init
+```
+
+#### 2. Setup the remote DVC Repository (Google Drive)
+
+- Create a new Google drive folder and copy the folder id from its URL
+- Run the follwoing
+
+```shell
+dvc remote add --default myremote gdrive://GDRIVE_FOLDER_CODE
+```
+
+<br>
+
+### Workflow Commands
+#### 1. Track a file by DVC
+
+```shell
+dvc add foo1.csv
+```
+
+You can specify a folder (e.g. data) with *-R* option ```dvc add -R data```
+
+#### 2. Push data to the remote storage
+
+```shell
+dvc push
+```
+
+#### 3. Pull data from the remote storage
+
+```shell
+dvc pull
+```
+
+## Handson 4: Setup DVC and Follow My Workflow
+
+- Init a DVC project and setup its remote on Google Drive
+- Go to the [repository](https://github.com/nicetak/github-workshop2022) of this workshop and read my workflow
+- In step 2, add a csv file in `data/csv` folder and create a commit (say, "add foo1.csv")
+- Follow the rest of my workflow
+
+
+## Troubleshoot
+
+<br>
+
+#### Git Reference log
+You can see all the git activity (commit, merge, rebase, ...)
+
+```shell
+git reflog
+```
+
+<br>
+
+#### Git Reset
+You can reset any git activity
+
+```shell
+git reset --soft COMMIT_ID_OR_REFLOG_ID
+```
+
+<br>
+
+### Keep in Mind
+- Nothing bad happens with Git. It just stores savepoints.
+- In practice, you rarely restore a file from a commit. But it gives you a lot of relief and freedom.
+
+
+
+
+
+## Learn More
+[Introduction to Git](https://docs.microsoft.com/en-us/learn/modules/intro-to-git/)・
+[Introduction to GitHub](https://docs.microsoft.com/en-us/learn/modules/introduction-to-github/)
+
+
+
