@@ -46,7 +46,7 @@
                         <mxPoint x="180" y="302" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="16" value="main" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#76608a;strokeColor=#432D57;fontColor=#000000;fontSize=20;arcSize=0;" parent="1" vertex="1">
+                <mxCell id="16" value="main" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#76608a;strokeColor=#432D57;fontColor=#ffffff;fontSize=20;arcSize=0;" parent="1" vertex="1">
                     <mxGeometry x="192.5" y="287.5" width="85" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="17" value="" style="endArrow=classic;html=1;fontSize=20;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#999999;" parent="1" source="16" edge="1">
@@ -70,7 +70,7 @@
                         <mxPoint x="695" y="302" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="30" value="main" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#76608a;strokeColor=#432D57;fontColor=#000000;fontSize=20;arcSize=0;" parent="1" vertex="1">
+                <mxCell id="30" value="main" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#76608a;strokeColor=#432D57;fontColor=#ffffff;fontSize=20;arcSize=0;" parent="1" vertex="1">
                     <mxGeometry x="707.5" y="287.5" width="85" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="31" value="" style="endArrow=classic;html=1;fontSize=20;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#999999;" parent="1" source="30" edge="1">

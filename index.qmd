@@ -45,6 +45,8 @@ separate things completed and under development
 - Need some knowledge to recover from a trouble
 - Git allows various styles to use, which are different across people and organization
 
+<br>
+
 ### I propose
 - First follow my workflow, which requires the minimum knowledge
 - Once you're comfortable with it, learn the detail
@@ -58,9 +60,10 @@ separate things completed and under development
 ::: {.column width="60%"}
 
 ### Git Is a Version Control Tool
-- App
-- Command Line
-- Works Locally
+- Command Line App
+- Works in a local machine
+
+<br>
 
 ### GitHub Is a Web-Service
 - Publish Codes
@@ -78,15 +81,15 @@ separate things completed and under development
 
 #### GUI Applications for Git & GitHub
 
-- [GitHub Desktop](https://desktop.github.com/)
-- [VSCode](https://code.visualstudio.com/)
-- [Fork](https://git-fork.com/)
-- ([RStudio](https://www.rstudio.com/))
+- We are going to use [VSCode](https://code.visualstudio.com/)
+- Other options: [GitHub Desktop](https://desktop.github.com/), [Fork](https://git-fork.com/), [RStudio](https://www.rstudio.com/)
 
-#### I recommend
+<br>
 
-- First learn CUI
+#### I recommend to learn CUI first
+
 - CUI knowledge is necessary to use GUI
+- Some troubles can be solved only through command line
 - DVC (explained later) only works with command line
 
 
@@ -96,20 +99,18 @@ separate things completed and under development
 
 <br>
 
-- "The purpose of Git" is to create a **COMMIT**
-- A commit is a save point of a state of the project folder
+![](./public/drawio/git_history.svg){fig-align="center"}
 
 <br>
 
-![](./public/drawio/git_history.svg)
-
-
+- "The purpose of Git" is to create a **COMMIT**
+- A commit is a save point of a state of the project folder
 
 ## You Can _Go Back_ to Any Commit
 
 <br>
 
-![](./public/drawio/git_back.svg)
+![](./public/drawio/git_back.svg){fig-align="center"}
 
 
 
@@ -118,11 +119,13 @@ separate things completed and under development
 
 <br>
 
-![](./public/drawio/git_compare.svg)
+![](./public/drawio/git_compare.svg){fig-align="center"}
 
 ## What Is _Commit_ in a Computer?
 
-![](./public/drawio/git_commit.svg)
+<br>
+
+![](./public/drawio/git_commit.svg){fig-align="center"}
 
 <br>
 
@@ -131,9 +134,12 @@ separate things completed and under development
 - The name of commit is just a random hash string
 
 
+
 ## Local & Remote Repository
 
-![](./public/drawio/git_repository.svg)
+<br>
+
+![](./public/drawio/git_repository.svg){fig-align="center"}
 
 - `.git` folder in your local machine (like in the previous page) is called **local repository**
 - Usually, a **remote repository** (like GitHub) is used for code sharing
@@ -218,20 +224,25 @@ git push origin main
 
 ## Handson 1: First Commit and Push
 
-#### 1. Go to [GitHub webpage](https://github.com/) and create a repository
-- Choose the private repository (if it is for research)
-- Choose the language you are using for .gitignore
-- Add README
-- No need to choose license (because it is private)
+<br>
 
-#### 2. Clone it to your local machine
-- The easist way is to open a new window of VS Code and choose "clone a repository"
-- You can also do `git clone URL_OF_REPOSITORY`
+### 1. Go to [GitHub webpage](https://github.com/) and create a repository
+1. Choose the private repository (if it is for research)
+1. Choose the language you are using for .gitignore
+1. Add README
+1. No need to choose license (because it is private)
 
-#### 3. Create a Commit and Push it
-- Create a text file (say foo1.txt) with a random text (say "Hello Git!")
-- Create a commit (don't forget to stage it before)
-- Push to the remote repository
+<br>
+
+### 2. Clone it to your local machine
+1. The easist way is to open a new window of VS Code and choose "clone a repository"
+1. You can also do `git clone URL_OF_REPOSITORY`
+
+## {}
+### 3. Create a Commit and Push it
+1. Create a text file (say foo1.txt) with a random text (say "Hello Git!")
+1. Create a commit (don't forget to stage it before)
+1. Push to the remote repository
 
 # Branch, Merge, and Conflict
 
@@ -242,47 +253,45 @@ git push origin main
 
 <br>
 
-![](./public/drawio/git_branch.svg)
+![](./public/drawio/git_branch.svg){fig-align="center"}
 
 <br>
 
 - To create a branch, `git branch BRANCH_NAME`
 - To move the HEAD, `git switch BRANCH_NAME`
-- In VS Code, press the button at bottom-left
 
 ## Merge
 
 <br>
 
-![](./public/drawio/git_merge.svg)
+![](./public/drawio/git_merge.svg){fig-align="center"}
 
 <br>
 
 - You can merge a branche into HEAD by `git merge BRANCH_NAME`
 
-## Two Types of Merge
+
+## 1. Merge at Local Repository
 
 <br>
 
-:::: {.columns}
-::: {.column}
-#### Merge at Local Repository
+![](./public/drawio/git_local_merge.svg){fig-align="center"}
 
 - Merge it to main on your local repository
 - Push the local main into the remote main
 - You can use it for solo project
 
-:::
+  
+## 2. Merge at Remote Repository
 
-::: {.column}
-#### Merge at Remote Repository
+<br>
+
+![](./public/drawio/git_remote_merge.svg){fig-align="center"}
 
 - Create a **Pull Request** on GitHub Repository
 - Decide to merge it into main or not on GitHub
 - Used for collaboration (but I use it even for solo project)
 
-:::
-::::
 
 
 ## Questions about Branches
@@ -307,35 +316,100 @@ I usually merge _dev_ into _main_ just before the meeting with my supervisor or 
 
 ## Conflict
 
-- **Conflict**: A different code is written in the same line of two branches in merging
-- It returns a code including the part conflicted
+A different code is written in the same line of two branches in merging
+
+<br>
+
+:::: {.columns}
+::: {.column}
+
+![](./public/drawio/git_conflict.svg){fig-align="center"}
+
+:::
+
+::: {.column}
+
+#### Produced File
+
+<br>
 
 ```shell
+aaaaa
+bbbbb
 <<<<<<< HEAD
-Code on the HEAD branch
+cccccc
 ======
-Code on the branch you want to merge
+zzzzzz
 >>>>>>> dev
+ddddd
 ```
-- To solve the conflict, just delete the lines you don't need, save the file, and create a commit for this merge.
-- In VS Code, you can solve the conflict by clicking buttons
-- Most conflicts can be avoided by a rule prohibitting members from co-editting the same file
+
+:::
+::::
+
+<br>
+
+Most conflicts can be avoided by a rule prohibitting members from co-editting the same file
+
+
+## Solve a Conflict
+
+1. Delete the lines you don't need and save the file
+1. Create a commit for this merge and solving the conflict
+
+:::: {.columns}
+::: {.column}
+
+### Regular Editor
+
+```shell
+aaaaa
+bbbbb
+<<<<<<< HEAD
+cccccc
+======
+zzzzzz
+>>>>>>> dev
+ddddd
+```
+$$\Downarrow$$
+
+```shell
+aaaaa
+bbbbb
+zzzzz
+ddddd
+```
+
+:::
+::: {.column}
+
+### VS Code
+
+
+:::
+::::
+
+
 
 
 ## Pull = Fetch + Merge
 
-- Although I explained **pull** as downloding from a remote repository, it is actually the combination of **fetch** and **merge** of a repository
+<br>
+
+![](./public/drawio/git_pull.svg){fig-align="center"}
+
 - **Fetch** : download a branch from the remote repository (origin) to a local machine, named `origin/BRANCH_NAME`
 - `git pull origin main` is equivalent to `git fetch origin main && git merge origin/main`
 - Because it is a merge, `git pull` could return a CONFLICT!
 
 
 
-
 ## Handson 2: Two Types of Merge
 
+<br>
 
-#### 1. Local Merge
+### 1. Local Merge
 1. Create a new branch "dev" and switch the HEAD into it
 1. Create some commits
 1. Switch HEAD into main
@@ -343,7 +417,9 @@ Code on the branch you want to merge
 1. Push it to origin/main
 1. Delete (local) dev branch
 
-#### 2. Remote Merge
+
+## {}
+### 2. Remote Merge
 1. Create dev branch and switch into it
 1. Create some commits
 1. Push it to origin/dev
@@ -373,19 +449,17 @@ Code on the branch you want to merge
 
 1. Switch to dev and create `foo3.txt` with a line of text (e.g. "Mountain of Mushroom"), create a commit, and push into origin/dev
 1. Go to GitHub and merge dev into main
-1. Go back to local. Switch to main and create `foo3.txt` with a different line of text (e.g. "Mountain of Bumboo"), create a commit
+1. Go back to local. Switch to main and create `foo3.txt` with a different line of text (e.g. "Mountain of Bumbooshoot"), create a commit
 1. Pull from origin/main, which produces a conflict. Solve it.
 
 <br>
 
-:::: {.columns}
-::: {.column}
-![](https://www.meiji.co.jp/sweets/chocolate/kinotake/products/kinokonoyama/assets/img/thumb.jpg)
+
+::: {layout-ncol=2}
+![Mountain of Mushroom](https://www.meiji.co.jp/sweets/chocolate/kinotake/products/kinokonoyama/assets/img/thumb.jpg)
+
+![Mountain of Bombooshoot](https://www.meiji.co.jp/sweets/chocolate/kinotake/products/takenokonosato/assets/img/thumb.jpg)
 :::
-::: {.column}
-![](https://www.meiji.co.jp/sweets/chocolate/kinotake/products/takenokonosato/assets/img/thumb.jpg)
-:::
-::::
 
 
 # Git & GitHub Workflow
@@ -395,7 +469,7 @@ Code on the branch you want to merge
 
 <br>
 
-![](./public/drawio/wf_pull.svg)
+![](./public/drawio/wf_pull.svg){fig-align="center"}
 
 <br>
 
@@ -408,7 +482,7 @@ git pull origin main
 
 <br>
 
-![](./public/drawio/wf_branch.svg)
+![](./public/drawio/wf_branch.svg){fig-align="center"}
 
 <br>
 
@@ -437,7 +511,7 @@ git checkout -b "dev"
 
 <br>
 
-![](./public/drawio/wf_commit.svg)
+![](./public/drawio/wf_commit.svg){fig-align="center"}
 
 <br>
 
@@ -462,7 +536,7 @@ git commit -m "hogehoge"
 
 <br>
 
-![](./public/drawio/wf_push.svg)
+![](./public/drawio/wf_push.svg){fig-align="center"}
 
 <br>
 
@@ -477,7 +551,7 @@ git push origin dev
 <br>
 <br>
 
-![](./public/drawio/wf_pr.svg)
+![](./public/drawio/wf_pr.svg){fig-align="center"}
 
 
 <br>
@@ -519,7 +593,9 @@ I recommend you to delete the remote and local dev branch here.
 
 ## How Does DVC Work?
 
-![](./public/drawio/dvc.svg)
+<br>
+
+![](./public/drawio/dvc.svg){fig-align="center"}
 
 
 
@@ -565,12 +641,14 @@ dvc push
 dvc pull
 ```
 
-## Handson 4: Setup DVC and Follow My Workflow
+## Handson 5: Setup DVC and Follow My Workflow
 
-- Init a DVC project and setup its remote on Google Drive
-- Go to the [repository](https://github.com/nicetak/github-workshop2022) of this workshop and read my workflow
-- In step 2, add a csv file in `data/csv` folder and create a commit (say, "add foo1.csv")
-- Follow the rest of my workflow
+<br>
+
+1. Init a DVC project and setup its remote on Google Drive
+1. Go to the [repository](https://github.com/nicetak/github-workshop2022) of this workshop and read my workflow
+1. In step 2, add a csv file in `data/csv` folder and create a commit (say, "add foo1.csv")
+1. Follow the rest of my workflow
 
 
 ## Troubleshoot
