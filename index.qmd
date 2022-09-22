@@ -1,38 +1,49 @@
 ---
-title: "Git & GitHub Workshop"
-author: Kazuharu Yanagimoto
-date: '`r format(Sys.time(), "%B %d, %Y")`'
-execute:
-    echo: false
-    warning: false
-    message: false
 format:
   revealjs:
     self-contained: true
     width: 1600
     height: 900
+    theme: [default, custom.scss]
 ---
+
+## {background-image="./public/img/roman-synkevych-wX2L8L-fGeA-unsplash.jpg"}
+
+::: {.title}
+Git & GitHub
+
+Workshop
+:::
+
+::: {.author}
+Kazuharu Yanagimoto
+:::
+
+::: {.date}
+September 23, 2022
+:::
+
 
 
 ## Why Do People Use Git?
 
 <br>
 
-#### 📝 **Recording**
+### 📝**Recording**
 
-take logs of all coding activity of you and your collaborators
+&emsp; take logs of all coding activity of you and your collaborators
 
-#### 🕒 **Restorable**
+### 🕒 **Restorable**
 
-go back to a previous version of codes
+&emsp; go back to a previous version of codes
 
-#### 🔍 **Comparable**
+### 🔍 **Comparable**
 
-focus on the change in the codes, and detect bugs
+&emsp; focus on the change in the codes, and detect bugs
 
-#### 🔀 **Branch**
+### 🔀 **Branch**
 
-separate things completed and under development
+&emsp; separate things completed and under development
 
 
 
@@ -45,7 +56,6 @@ separate things completed and under development
 - Need some knowledge to recover from a trouble
 - Git allows various styles to use, which are different across people and organization
 
-<br>
 
 ### I propose
 - First follow my workflow, which requires the minimum knowledge
@@ -93,7 +103,7 @@ separate things completed and under development
 - DVC (explained later) only works with command line
 
 
-# Basics of Git
+# Basics of Git {background-color="#1C5253"}
 
 ## Commit Is a Save Point!
 
@@ -146,12 +156,15 @@ separate things completed and under development
 - **Push** and **Pull** is a command to sync your local repository with the remote  repository
 
 
-# CUI and GUI Operations
+# CUI and GUI Operations {background-color="#1C5253"}
 
 ## Stage
 
 - When you modify some files, you can create a commit only for specific changes
 - This choosing process is called, **Staging**
+
+:::: {.columns}
+::: {.column}
 
 #### Command Line
 
@@ -163,11 +176,31 @@ git add foo1.txt
 
 <br>
 
+You can stage multiple files by
+
+```shell
+git add foo1.txt foo2.txt foo3.txt
+```
+
+:::
+::: {.column}
+
 #### VS Code
+
+<br>
+
+![](./public/img/git_stage.png){fig-align="center"}
+
+:::
+::::
+
 
 ## Commit
 
 - You have to add a message for each commit
+
+:::: {.columns}
+::: {.column}
 
 #### Command Line
 
@@ -177,15 +210,17 @@ git add foo1.txt
 git commit -m "YOUR COMMENT"
 ```
 
-<br>
+:::
+::: {.column}
 
 #### VS Code
 
+![](./public/img/git_commit.png){fig-align="center"}
 
+:::
+::::
 
-## Push and Pull
-
-For now, forget about `origin main`
+## {}
 
 :::: {.columns}
 ::: {.column}
@@ -202,9 +237,13 @@ git push origin main
 
 #### VS Code
 
+![](./public/img/git_push.png){fig-align="center"}
+
 :::
 
 ::: {.column}
+
+
 ### Pull
 
 #### Command Line
@@ -217,9 +256,12 @@ git push origin main
 
 #### VS Code
 
+![](./public/img/git_pull.png){fig-align="center"}
+
 :::
 ::::
 
+For now, forget about `origin main`
 
 
 ## Handson 1: First Commit and Push
@@ -239,12 +281,15 @@ git push origin main
 1. You can also do `git clone URL_OF_REPOSITORY`
 
 ## {}
-### 3. Create a Commit and Push it
+### 3. Create a Commit and Push It
+
+<br>
+
 1. Create a text file (say foo1.txt) with a random text (say "Hello Git!")
 1. Create a commit (don't forget to stage it before)
 1. Push to the remote repository
 
-# Branch, Merge, and Conflict
+# Branch, Merge, and Conflict {background-color="#1C5253"}
 
 ## HEAD and Branch
 
@@ -303,15 +348,13 @@ git push origin main
 - Easy to detect a bug (because "main" works perfectly)
 - Collaborators create a branch from main and work on it
 
-<br>
-
 #### *When Should I Create a Branch?*
 A simple suggestion is _main-dev workflow_
 
 - You only work on **dev** branch (with a collaborator, I use my name for the developing branch)
 - When you finish a meaningful chunk of works, cleanup uneccessary files and merge **dev** into **main**
 
-I usually merge _dev_ into _main_ just before the meeting with my supervisor or collaborators.
+I merge into _main_ just before the meeting with my supervisor or collaborators.
 
 
 ## Conflict
@@ -386,6 +429,9 @@ ddddd
 
 ### VS Code
 
+<br>
+
+![](./public/img/git_conflict.png){fig-align="center"}
 
 :::
 ::::
@@ -407,62 +453,72 @@ ddddd
 
 ## Handson 2: Two Types of Merge
 
-<br>
+:::: {.columns}
+::: {.column}
 
 ### 1. Local Merge
-1. Create a new branch "dev" and switch the HEAD into it
+1. Create a new branch "dev"
+1. Switch the HEAD into _dev_
 1. Create some commits
-1. Switch HEAD into main
-1. Merge dev into main
-1. Push it to origin/main
-1. Delete (local) dev branch
+1. Switch HEAD into _main_
+1. Merge _dev_ into _main_
+1. Push it to _origin/main_
+1. Delete (local) _dev_ branch
 
+:::
 
-## {}
+::: {.column}
+
 ### 2. Remote Merge
-1. Create dev branch and switch into it
+1. Create _dev_ branch 
+1. Switch to _dev_
 1. Create some commits
-1. Push it to origin/dev
+1. Push it to _origin/dev_
 1. Go to GitHub and create a Pull Request
-1. Merge it into main and delete the remote dev branch
-1. Go back to local and switch into main
-1. Pull main branch and delete (local) dev branch
+1. Merge _dev_ to _main_ and delete the remote _dev_ branch
+1. Go back to local and switch to _main_
+1. Pull main branch and delete (local) _dev_ branch
 
+:::
+::::
 
 ## Handson 3: Three Types of Conflicts
 
+<br>
+
 ### 1. Local Conflict
 
-1. Switch to dev and create `foo1.txt` with a line of text (e.g. "Tortilla sin Cebolla") and create a commit
-1. Switch to main and create `foo1.txt` with a different line of text (e.g. "Tortilla con Cebolla") and a create a commit
-1. Merge dev into main, which produces a conflict
+1. Switch to _dev_ and create `foo1.txt` with a line of text (e.g. "Tortilla sin Cebolla") and create a commit
+1. Switch to _main_ and create `foo1.txt` with a line of different text (e.g. "Tortilla con Cebolla") and a create a commit
+1. Merge _dev_ into _main_, which produces a conflict
 1. Solve the conflict by choosing either of the lines
+
+## {}
 
 ### 2. Pull Request Conflict
 
-1. Head on main and create `foo2txt` with a line of text (e.g. "Oh! How beautiful are our Emperor's new clothes! "). Push it into origin/main
-1. Switch to dev and create `foo2.txt` with a different line of text (e.g. "But the Emperor has nothing at all on!"). Push it into origin/dev
+<br>
+
+1. Switch to _dev_ and create `foo2.txt` with a line of text (e.g. "But the Emperor has nothing at all on!"). Push it into _origin/dev_
+1. Switch to _main_ and create `foo2.txt` with a line of different text (e.g. "Oh! How beautiful are our Emperor's new clothes! "). Push it into _origin/main_
 1. Go to GitHub and create a pull request. Solve the conflict on GitHub
 
 ## {}
 ### 3. Pull Conflict
 
-1. Switch to dev and create `foo3.txt` with a line of text (e.g. "Mountain of Mushroom"), create a commit, and push into origin/dev
-1. Go to GitHub and merge dev into main
-1. Go back to local. Switch to main and create `foo3.txt` with a different line of text (e.g. "Mountain of Bumbooshoot"), create a commit
-1. Pull from origin/main, which produces a conflict. Solve it.
-
-<br>
-
+1. Switch to _dev_ and create `foo3.txt` with a line of text (e.g. "Mountain of Mushroom"), create a commit, and push into _origin/dev_
+1. Go to GitHub and merge _dev_ into _main_
+1. Go back to local. Switch to _main_ and create `foo3.txt` with a different line of text (e.g. "Village of Bamboo Shoot"), create a commit
+1. Pull from _origin/main_, which produces a conflict. Solve it.
 
 ::: {layout-ncol=2}
 ![Mountain of Mushroom](https://www.meiji.co.jp/sweets/chocolate/kinotake/products/kinokonoyama/assets/img/thumb.jpg)
 
-![Mountain of Bombooshoot](https://www.meiji.co.jp/sweets/chocolate/kinotake/products/takenokonosato/assets/img/thumb.jpg)
+![Village of Bambooshoot](https://www.meiji.co.jp/sweets/chocolate/kinotake/products/takenokonosato/assets/img/thumb.jpg)
 :::
 
 
-# Git & GitHub Workflow
+# Git & GitHub Workflow {background-color="#1C5253"}
 
 
 ## 1. Sync Local Repository
@@ -567,26 +623,29 @@ I recommend you to delete the remote and local dev branch here.
 - Try both command line and VS Code
 
 
-# GitHub with Data
+# GitHub with Data {background-color="#1C5253"}
 
+## How Can We Work with Data in Git?
+
+- There is a limit for the file size in GitHub (100 MB)
+- GitHub's [Git Large File Storage (GLFS)](https://git-lfs.github.com/) is costly (and a trap)
+- You need to **git-ignore** these files
+
+<br>
+
+### What is `.gitignore` ?
+
+- A text file shows files you don't want track by git
+- Usually, large files, auxiliary files, and secret information are git-ignored
+- You can specify by folder (e.g. `data/`) and by extension (e.g. `*.csv`)
 
 
 ## Data Version Control (DVC)
 
-<br>
+![](./public/drawio/dvc.svg){fig-align="center"}
 
-#### *How Can We Work with Data in Git?*
-- We want to store the data in the Git project (because referred in the code)
-- Not interested in change in each line of the data (imagine data cleaning)
-- There is a limit for the file size in GitHub (100 MB)
-
-<br>
-
-
-#### *How Does DVC Work?*
-- Create a text file for the meta-information of the data
-- Git manages only the text file
-- Git can follow when the data is added, modified, deleted through the text file
+- Create a text file (`*.dvc`) for the meta-information of the data
+- Git tracks only dvc files and ignores the data (by `.gitignore`)
 - The original data is stored in the remote storage (Google Drive, Amazon S3, ..)
 
 
@@ -595,19 +654,25 @@ I recommend you to delete the remote and local dev branch here.
 
 <br>
 
-![](./public/drawio/dvc.svg){fig-align="center"}
+![](./public/drawio/dvc_cache.svg){fig-align="center"}
+
+- A data file is actually stored in `.dvc/cache` with a random (hashed) name
+- In the data folder, the data file is just a symbolic link to the original file
+- Data will be stored with this hashed name in the cloud storage
 
 
 
-## {}
+## DVC Setup Commands
 
-### Setup Commands
+<br>
 
 #### 1. Init a DVC project
 
 ```shell
 dvc init
 ```
+
+<br>
 
 #### 2. Setup the remote DVC Repository (Google Drive)
 
@@ -618,24 +683,38 @@ dvc init
 dvc remote add --default myremote gdrive://GDRIVE_FOLDER_CODE
 ```
 
-<br>
+## DVC Workflow Commands
 
-### Workflow Commands
 #### 1. Track a file by DVC
 
 ```shell
 dvc add foo1.csv
 ```
 
-You can specify a folder (e.g. data) with *-R* option ```dvc add -R data```
+You can specify a folder (e.g. data) with *-R* option
+
+```shell
+dvc add -R data
+```
+
+<br>
 
 #### 2. Push data to the remote storage
+
 
 ```shell
 dvc push
 ```
 
+For the first push (or pull), you will see an authentication URL.
+
+- Click the link and log in to your Google account
+- Check both checkboxes
+
+<br>
+
 #### 3. Pull data from the remote storage
+
 
 ```shell
 dvc pull
@@ -680,8 +759,7 @@ git reset --soft COMMIT_ID_OR_REFLOG_ID
 
 
 
-
-## Learn More
+## Learn More {.center .center-x background-color="#1C5253"}
 [Introduction to Git](https://docs.microsoft.com/en-us/learn/modules/intro-to-git/)・
 [Introduction to GitHub](https://docs.microsoft.com/en-us/learn/modules/introduction-to-github/)
 
