@@ -1,0 +1,139 @@
+<mxfile host="65bd71144e">
+    <diagram id="0nmvTfrTeX1Rg3ekf0Fh" name="Page-1">
+        <mxGraphModel dx="593" dy="811" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="none" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="" style="rounded=1;whiteSpace=wrap;html=1;fontSize=16;strokeColor=#999999;dashed=1;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="120" y="590" width="200" height="115" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="" style="html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#000000;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.folder;fontSize=16;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="150" y="605" width="30" height="19.5" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="" style="endArrow=none;html=1;fontSize=16;entryX=0.596;entryY=1.071;entryDx=0;entryDy=0;entryPerimeter=0;strokeColor=#999999;" parent="1" target="3" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="168" y="655" as="sourcePoint"/>
+                        <mxPoint x="210" y="595" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="7" value="" style="endArrow=none;html=1;fontSize=16;strokeColor=#999999;" parent="1" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="170" y="640" as="sourcePoint"/>
+                        <mxPoint x="219.75" y="655" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="220" y="640"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="8" value="" style="endArrow=none;html=1;fontSize=16;strokeColor=#999999;" parent="1" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="200" y="640" as="sourcePoint"/>
+                        <mxPoint x="269.75" y="655" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="270" y="640"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="9" value="" style="html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#000000;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.document;fontSize=16;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="260" y="655" width="21" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="" style="html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#000000;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.data;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="156" y="655.45" width="24" height="29.099999999999998" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" value=".git" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="148" y="684.55" width="40" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="" style="html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#000000;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.folder;fontSize=16;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="205" y="660.25" width="30" height="19.5" as="geometry"/>
+                </mxCell>
+                <mxCell id="14" value="" style="rounded=1;whiteSpace=wrap;html=1;fontSize=16;strokeColor=#999999;dashed=1;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="470" y="590" width="200" height="115" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" value="" style="html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#000000;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.folder;fontSize=16;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="500" y="605" width="30" height="19.5" as="geometry"/>
+                </mxCell>
+                <mxCell id="16" value="" style="endArrow=none;html=1;fontSize=16;entryX=0.596;entryY=1.071;entryDx=0;entryDy=0;entryPerimeter=0;strokeColor=#999999;" parent="1" target="15" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="518" y="655" as="sourcePoint"/>
+                        <mxPoint x="560" y="595" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="17" value="" style="endArrow=none;html=1;fontSize=16;strokeColor=#999999;" parent="1" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="520" y="640" as="sourcePoint"/>
+                        <mxPoint x="569.75" y="655" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="570" y="640"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="18" value="" style="endArrow=none;html=1;fontSize=16;strokeColor=#999999;" parent="1" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="550" y="640" as="sourcePoint"/>
+                        <mxPoint x="619.75" y="655" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="620" y="640"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="19" value="" style="html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#000000;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.document;fontSize=16;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="610" y="655" width="21" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="20" value="" style="html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#000000;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.data;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="506" y="655.45" width="24" height="29.099999999999998" as="geometry"/>
+                </mxCell>
+                <mxCell id="21" value=".git" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="498" y="684.55" width="40" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="22" value="" style="html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#000000;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.folder;fontSize=16;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="555" y="660.25" width="30" height="19.5" as="geometry"/>
+                </mxCell>
+                <mxCell id="23" value="" style="rounded=1;whiteSpace=wrap;html=1;fontSize=16;strokeColor=#999999;dashed=1;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="360" y="439.55" width="80" height="65" as="geometry"/>
+                </mxCell>
+                <mxCell id="29" value="" style="html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#000000;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.data;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="388" y="455.45000000000005" width="24" height="29.099999999999998" as="geometry"/>
+                </mxCell>
+                <mxCell id="30" value=".git" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="380" y="484.54999999999995" width="40" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="34" value="" style="shape=flexArrow;endArrow=classic;html=1;strokeColor=#000000;strokeWidth=2;" parent="1" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="540" y="570" as="sourcePoint"/>
+                        <mxPoint x="470" y="504.55" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="35" value="" style="shape=flexArrow;endArrow=classic;html=1;strokeColor=#000000;strokeWidth=2;" parent="1" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="330" y="500" as="sourcePoint"/>
+                        <mxPoint x="270" y="570" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="36" value="Pull (Clone)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="187.5" y="510" width="65" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="37" value="Push" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="537.5" y="510" width="65" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="38" value="Local Repository" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=15;fontColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="145" y="720" width="150" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="40" value="Local Repository" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=15;fontColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="500" y="720" width="150" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="41" value="Remote Repository" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=15;fontColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="325" y="390" width="150" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="42" value="" style="dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.github;fontSize=15;" parent="1" vertex="1">
+                    <mxGeometry x="362.5" y="315" width="75" height="75" as="geometry"/>
+                </mxCell>
+                <mxCell id="43" value="" style="verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.laptop;pointerEvents=1;fontSize=15;" parent="1" vertex="1">
+                    <mxGeometry x="20" y="629.75" width="82" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="44" value="" style="verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.laptop;pointerEvents=1;fontSize=15;" parent="1" vertex="1">
+                    <mxGeometry x="690" y="622.5" width="82" height="50" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

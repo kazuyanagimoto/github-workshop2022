@@ -1,0 +1,7 @@
+{
+    "quarto.assist.updateMode": "sticky",
+    "quarto.render.renderOnSave": true,
+    "quarto.render.previewReveal": false,
+    "quarto.render.previewType": "none",
+    "quarto.cells.background.delay": 250
+}

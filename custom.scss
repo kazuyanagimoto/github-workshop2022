@@ -1,0 +1,68 @@
+/*-- scss:defaults --*/
+
+@import url(https://fonts.googleapis.com/css?family=Montserrat:300,300i&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Fira+Mono&display=swap);
+
+// fonts
+$font-family-sans-serif: Montserrat, sans-serif !default;
+$font-family-monospace: "Fira Mono", monospace  !default;
+
+// colors
+$body-bg: #fff !default;
+$body-color: #272822 !default;
+$link-color: #055099 !default;
+
+// headings
+$presentation-heading-font: "Josefin Sans", sans-serif !default;
+$presentation-heading-color: #1C5253 !default;
+
+$h1-font-size: 1.6em !default;
+$h2-font-size: 1.3em !default;
+$h3-font-size: 1.15em !default;
+
+// code blocks
+//$code-block-border-color: #93a1a1 !default;
+
+/*-- scss:rules --*/
+
+.title{
+    color: $body-bg;
+    font-size: 2.5em;
+    font-family: $presentation-heading-font;
+    position: absolute;
+    top: 20%
+}
+
+
+.author {
+    color: $body-bg;
+    font-size: $h2-font-size;
+    font-family: $presentation-heading-font;
+    position: absolute;
+    bottom: 13%;
+}
+
+.date {
+    color: #a0a0a0;
+    font-size: $h3-font-size;
+    font-family: $presentation-heading-font;
+    position: absolute;
+    bottom: 5%;
+}
+
+
+.center-x{
+    text-align: center;
+}
+
+section.has-dark-background a {
+    color: #fff;
+    border-style: dashed;
+    border-bottom-width: 1px;
+}
+
+section.has-dark-background a:hover {
+    color: #fff;
+    border-bottom: solid
+}
